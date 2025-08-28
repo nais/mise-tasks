@@ -25,7 +25,7 @@ jobs:
       - name: Generate release info
         id: generate
         run: |
-          mise run release-info # inputs: taken from env; outputs: version, changelog
+          ./release-info.sh # inputs: taken from env; outputs: version, changelog
 
   release-github:
     if: github.ref == 'refs/heads/main' && needs.release-info.outputs.changelog != ''
